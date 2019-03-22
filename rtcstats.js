@@ -218,7 +218,7 @@ module.exports = function(trace, getStatsInterval, prefixesToWrap) {
       }
       if (!isEdge) {
         pc.addEventListener('iceconnectionstatechange', function() {
-          if (pc.iceConnectionState === 'connected') {
+          if (pc.iceConnectionState === 'connected' || pc.iceConnectionState === 'failed') {
             getStats();
           }
         });
